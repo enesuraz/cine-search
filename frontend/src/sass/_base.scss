@@ -1,0 +1,58 @@
+$primary-color:#ebe4b7;
+$primary-color-2:#e9d136;
+$secondary-color:#cb69b7;
+
+$dark-color:#262320;
+$white-color:#fff;
+$grey-color:#f3f4f6;
+$dark-grey:#e4e3e3;
+
+$breakpoint-1:75em;
+$breakpoint-2:56.25em;
+$breakpoint-3:43.75em;
+$breakpoint-4:37.5em;
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+
+  @media only screen and (max-width: $breakpoint-1) {
+      font-size: 56.25%;
+  }
+
+  @media only screen and (max-width: $breakpoint-2) {
+    font-size: 50%;
+}
+}
+
+body {
+  font-family: "PT Sans", sans-serif;
+  font-weight: 400;
+  font-size: 1.7rem;
+  line-height: 1;
+
+  min-height: 100vh;
+  background: linear-gradient(to right bottom,$primary-color,$secondary-color);
+}
+
+svg {
+    width: 1.6rem;
+    height: 1.6rem;
+  }
+  
+  a:link,
+  a:visited {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  ul {
+    list-style: none;
+  }

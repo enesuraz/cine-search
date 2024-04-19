@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%2210 0 100 100%22><text y=%22.90em%22 font-size=%2290%22>🎬</text></svg>"></link>
+    <link rel="stylesheet" href="src/sass/main.scss" />
+    <script type="module" src="src/js/controller.js"></script>
+    <title>CineSearch</title>
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <div class="header__logo">
+          <h1>🎬 CineSearch</h1>
+        </div>
+        <form action="#" class="search">
+          <input
+            type="text"
+            placeholder="search actors or genre"
+            class="search__input"
+          />
+          <button class="search__button">
+            <svg>
+              <use href="src/assets/icons.svg#icon-search"></use>
+            </svg>
+            <span>Search</span>
+          </button>
+        </form>
+        <ul class="links">
+          <li class="links__item">
+            <a href="#" class="links__link" id="show-popup">Add Films</a>
+          </li>
+          <li class="links__item" id="bookmarks">
+            <a href="#" class="links__link">WatchList</a>
+            <ul class="sidebar__list--bookmarks">
+              <div class="message">
+                <div class="message-box">
+                  <span>Not created any watchlist yet</span>
+                </div>
+              </div>
+              <!-- Sidebar items here -->
+            </ul>
+          </li>
+        </ul>
+      </header>
+      <main class="main">
+        <div class="sidebar">
+          <div class="sidebar__films">
+            <ul class="sidebar__list">
+              <!-- Sidebar items here -->
+            </ul>
+            <div class="pagination">
+              <!-- Pagination button here -->
+            </div>
+          </div>
+        </div>
+        <div class="content">
+          <div class="film-container">
+            <div class="message">
+              <div class="message-box">
+                <span
+                  >Unlock website search features,Search any film by actor name or genre you want :) :)</span
+                >
+              </div>
+            </div>
+
+            <!-- Film content Here -->
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <div class="add-popup">
+      <form action="#" class="add-form">
+        <h2 class="add-form__title">Add A film</h2>
+        <div class="add-form__inputs">
+          <input type="text" name="title" placeholder="Title" />
+          <input type="date" name="released" placeholder="Released Year" />
+          <input type="number" name="runtime" placeholder="Runtime(min)" />
+          <input
+            type="text"
+            name="genre"
+            placeholder="Genre(ex:Action,Adventure,Fantasy)"
+          />
+          <input type="text" name="director" placeholder="Director" />
+          <input
+            type="text"
+            name="actors"
+            placeholder="Actors(ex:Sam Worthington, Zoe Saldana)"
+          />
+          <input type="text" name="imdbRating" placeholder="Imdb rating" />
+          <input type="text" name="plot" placeholder="Plot" />
+          <input type="text" name="poster" placeholder="Image url" />
+          <input type="text" name="imdbID" placeholder="ImdbID" />
+          <input type="number" name="year" placeholder="Published year" />
+        </div>
+        <div class="add-form__center">
+          <button type="submit" class="add-form__btn">Add</button>
+        </div>
+        <span class="add-form__close">&times;</span>
+      </form>
+    </div>
+  </body>
+</html>
