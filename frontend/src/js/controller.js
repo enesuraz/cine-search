@@ -6,6 +6,9 @@ import PaginationView from "./views/PaginationView";
 import WatchListView from "./views/WatchListView";
 import AddFilmView from "./views/AddFilmView";
 
+import "core-js/stable";
+import "regenerator-runtime/runtime";
+
 /**
  * Render film to the dom, sidebar result view and watchlist view update every load or chnage hash
  */
@@ -25,7 +28,6 @@ async function controlFilm() {
 
     FilmView.render(model.state.film);
   } catch (err) {
-    console.error(err);
     FilmView.renderMessage();
   }
 }
@@ -40,9 +42,10 @@ async function controlSearch() {
     await model.searchFilm(query);
 
     ResultView.render(model.resultsPerPage());
-    PaginationView.render(model.state.search);
   } catch (err) {
     ResultView.renderMessage(err.message);
+  } finally {
+    PaginationView.render(model.state.search);
   }
 }
 
@@ -50,8 +53,6 @@ async function controlSearch() {
  * Update result and pagination view when clicking pagination button
  */
 function controlPaginate(goTo) {
-  console.log(goTo);
-
   ResultView.update(model.resultsPerPage(goTo));
 
   PaginationView.render(model.state.search);
@@ -98,7 +99,6 @@ async function controlAddFilm(data) {
       AddFilmView._togglePopup();
     }, 2500);
   } catch (err) {
-    console.log(err);
     AddFilmView.renderMessage(err.message);
   }
 }

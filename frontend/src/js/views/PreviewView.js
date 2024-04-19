@@ -7,7 +7,6 @@ class PreviewView extends View {
    * @returns {object} markup
    */
   _generateHTML() {
-    console.log(this._data);
     const id = window.location.hash.slice(1);
 
     return `<li class="sidebar__item ${

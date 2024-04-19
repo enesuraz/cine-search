@@ -10,7 +10,7 @@ export default class View {
    */
   render(data, render = true) {
     if (!data || (Array.isArray(data) && data.length === 0))
-      return this.renderError();
+      return this.renderMessage();
     this._data = data;
     const markup = this._generateHTML();
 

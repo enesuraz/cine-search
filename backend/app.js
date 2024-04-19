@@ -1,7 +1,3 @@
-// tofoy93
-// x3dbsQStstPBCST2
-// mongodb+srv://tofoy93:x3dbsQStstPBCST2@cluster0.hlqrxnz.mongodb.net/
-
 const express = require("express");
 const authController = require("./controller/authController");
 const filmController = require("./controller/filmController");

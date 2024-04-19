@@ -44,7 +44,6 @@ export async function loadFilm(id) {
     if (state.bookmarks.some((bookmark) => bookmark.id === id))
       state.film.bookmarked = true;
     else state.film.bookmarked = false;
-    console.log(state.bookmarks, state.film.bookmarked);
   } catch (err) {
     throw err;
   }
@@ -137,14 +136,12 @@ export const deleteBookmark = function (id) {
  */
 export async function uploadFilm(newFilm) {
   try {
-    console.log(newFilm);
     newFilm.actors = newFilm.actors.split(",");
     newFilm.genre = newFilm.genre.replaceAll(" ", "").split(",");
     newFilm.imdbRating = +newFilm.imdbRating;
 
     const data = await sendJSON(`${API_ENDPOINT}/?api_key=${API_KEY}`, newFilm);
     const { film } = data.data;
-    console.log(film, newFilm);
 
     scrappedData(film);
   } catch (err) {

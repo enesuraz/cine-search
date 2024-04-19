@@ -16,10 +16,14 @@ exports.addFilm = catchAsync(async (req, res, next) => {
 exports.getFilms = catchAsync(async (req, res, next) => {
   let filteredFilms = Film.find().select("-__v,-createdAt,-updatedAt");
   const searchQuery = req.query.q?.split(",");
+  const filteredQueries = searchQuery?.map((q) => q.toLowerCase());
 
   if (searchQuery)
     filteredFilms.find({
-      $or: [{ genre: { $in: searchQuery } }, { actors: { $in: searchQuery } }],
+      $or: [
+        { genre: { $in: filteredQueries } },
+        { actors: { $in: searchQuery } },
+      ],
     });
 
   const films = await filteredFilms;

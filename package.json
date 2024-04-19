@@ -1,0 +1,20 @@
+{
+  "name": "cine-search",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "install-server": "npm install --prefix backend",
+    "install-client": "npm install --prefix frontend",
+    "install": "npm run install-server && npm run install-client",
+    "dev-client": "npm start --prefix frontend",
+    "dev-server": "npm run watch --prefix backend",
+    "dev": "npm run dev-server & npm run dev-client",
+    "build-client": "npm run build --prefix frontend",
+    "build-server": "npm run prod --prefix backend",
+    "deploy": "npm run build-client && npm run build-server"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
